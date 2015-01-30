@@ -7,13 +7,39 @@
 </head>
 <body>
 
-  <!-- TODO: put your markup here -->
+  <div class="user-mgmt__container">
+
+    <div class="user-login">
+
+      <form class="user-login__info">
+
+        <label class="login-label">First name</label><br>
+        <input type="text" name="first-name" class="first-name" required><br>
+        <label class="login-label">Last name</label><br>
+        <input type="text" name="last-name" class="last-name" required><br>
+        <label class="login-label">Email</label><br>
+        <input type="email" name="user-email" class="user-email" required><br>
+        <input type="submit" class="user-submit">
+
+      </form>
+
+    </div>
+
+    <div class="user-index">
+
+      <ul class="user-index__list">
+
+        <li class="user-index__item">User List</li>
+
+      </ul>
+
+    </div>
+
+  </div>
 
   <script src="js/object-store.js"></script>
   <script src="js/user.js"></script>
-
-  <!-- TODO: add more scripts here that use the
-  classes defined in the previous scripts -->
+  <script src="js/app.js"></script>
 
 </body>
 </html>
