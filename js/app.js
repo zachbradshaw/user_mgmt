@@ -57,6 +57,10 @@ function addUser() {
   }
 }
 
+function searchUser () {
+  
+}
+
 // listAdditionFirst();
 // listAdditionEmail();
 // var emailNode = document.createTextNode(newUser.email);

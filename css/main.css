@@ -1,6 +1,7 @@
 body {
   font-family: 'Lato';
   color: white;
+  background: #6FA270;
   background-image: url(http://i.imgur.com/wMV5Imj.jpg);
   background-size: cover;
 }
@@ -11,6 +12,11 @@ input {
   border: 1px solid white;
   border-radius: .25em;
   outline-color: white;
+  color: white;
+}
+
+input::-webkit-input-placeholder {
+    color: white;
 }
 
 input:-webkit-autofill {
@@ -61,6 +67,12 @@ input:-webkit-autofill {
   margin: .5em auto 1em auto;
 }
 
+.user-search {
+  position: absolute;
+  right: 0;
+  bottom: -4em;
+}
+
 .user-submit {
   padding: 1em;
   background: transparent;
@@ -82,6 +94,12 @@ input:-webkit-autofill {
   /*margin: 2em;*/
   right: 15%;
   top: 0;
+}
+
+.user-index__list {
+  /*background: rgba(255, 255, 255, 0.58);*/
+  /*padding: .5em;*/
+  margin: .5em;
 }
 
 .user-name {
