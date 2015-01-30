@@ -9,6 +9,9 @@ var userDisplay = userArray.join('');
 var firstClear = document.querySelector('.first-name');
 var lastClear = document.querySelector('.last-name');
 var emailClear = document.querySelector('.email-input');
+var userSearch = document.querySelector('.user-search');
+var userSort = document.querySelector('.user-sort');
+var removeUser = document.querySelector('.remove-user');
 
 
 form.addEventListener('submit', function(e) {
@@ -35,31 +38,69 @@ function addUser() {
     var listDiv1 = document.createElement('div');
     var listDiv2 = document.createElement('div');
     var listDiv3 = document.createElement('div');
+    var listButton = document.createElement('div');
 
     var itemFirst = document.createTextNode(newUser.firstName);
     var itemLast = document.createTextNode(newUser.lastName);
     var itemEmail = document.createTextNode(newUser.email);
+    var itemX = document.createTextNode('k');
 
     userIndex.appendChild(listLi);
 
     listLi.appendChild(listDiv1);
     listLi.appendChild(listDiv2);
     listLi.appendChild(listDiv3);
+    listLi.appendChild(listButton);
 
     listDiv1.appendChild(itemFirst);
     listDiv2.appendChild(itemLast);
     listDiv3.appendChild(itemEmail);
+    listButton.appendChild(itemX);
 
     listLi.className += "user-index__item";
     listDiv1.className += "user-name";
     listDiv2.className += "user-name";
     listDiv3.className += "user-email";
+    listButton.className += "remove-user";
   }
 }
 
 function searchUser () {
-  
+  var searchInput = userSearch.value
+
+  if (userSearch === userArray.some()) {
+    alert('fire');
+  }
 }
+
+function sortUser() {
+  userArray.sort(function(a, b){
+    var nameA = a.name.toLowerCase();
+    var nameB = b.name.toLowerCase();
+    if (nameA < nameB)
+      return -1
+    if (nameA > nameB)
+      return 1
+    return 0;
+  });
+}
+
+function removeUser() {
+
+}
+
+
+
+//   userArray.sort(function(a, b){
+//     var nameA = a.name.toLowerCase();
+//     var nameB = b.name.toLowerCase();
+//     if (nameA < nameB)
+//       return -1
+//     if (nameA > nameB)
+//       return 1
+//     return 0;
+//   });
+// })
 
 // listAdditionFirst();
 // listAdditionEmail();

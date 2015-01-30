@@ -20,7 +20,9 @@ input::-webkit-input-placeholder {
 }
 
 input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 1000px white inset;
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset;
+  opacity: .4;
+  color: white;
 }
 
 .site-header {
@@ -73,6 +75,17 @@ input:-webkit-autofill {
   bottom: -4em;
 }
 
+.user-sort {
+  position: absolute;
+  right: 9.7em;
+  bottom: -1.9em;
+  font-size: 1em;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  outline-color: white;
+}
+
 .user-submit {
   padding: 1em;
   background: transparent;
@@ -102,6 +115,12 @@ input:-webkit-autofill {
   margin: .5em;
 }
 
+.user-index__item {
+  margin: 1em;
+  /*background: rgba(255, 255, 255, 0.58);*/
+  /*padding: .5em;*/
+}
+
 .user-name {
   display: inline;
   margin-right: 5px;
@@ -112,4 +131,17 @@ input:-webkit-autofill {
   display: inline;
   float: right;
   /*margin-bottom: 5px;*/
+}
+
+.remove-user {
+  font-family: 'portfolio-icons';
+  display: inline;
+  position: absolute;
+  right: 1em;
+  opacity: .5;
+}
+
+.remove-user:hover {
+  cursor: pointer;
+  opacity: 1;
 }
