@@ -1,20 +1,45 @@
 body {
-  font-family: sans-serif;
+  font-family: 'Lato';
+  color: white;
+  background-image: url(http://i.imgur.com/wMV5Imj.jpg);
+  background-size: cover;
 }
 
 input {
   padding: 1em;
+  background: transparent;
+  border: 1px solid white;
+  border-radius: .25em;
+  outline-color: white;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+
+.site-header {
+  font-size: 10em;
+  font-weight: 300;
+  color: white;
+  width: 100%;
+  text-align: center;
+  margin: .25em 0 .5em 0;
 }
 
 .user-mgmt__container {
-  text-align: left;
+  /*text-align: center;*/
+  position: relative;
 }
 
 .user-login {
-  border: 1px solid black;
+  border: 1px solid white;
   width: 20em;
-  margin: 2em;
-  display: inline-block;
+  /*margin: 2em;*/
+  /*display: inline-block;*/
+  position: absolute;
+  border-radius: .25em;
+  top: 0;
+  left: 15%;
 }
 
 .user-login__info {
@@ -31,26 +56,42 @@ input {
 
 .first-name,
 .last-name,
-.user-email {
+.email-input {
   width: 19.5em;
   margin: .5em auto 1em auto;
 }
 
 .user-submit {
   padding: 1em;
-  background: white;
+  background: transparent;
   border-radius: .25em;
   width: 10em;
   margin: 1em auto;
-  border: 1px solid gray;
+  border: 1px solid white;
+  color: white;
 }
 
 .user-index {
-  width: 50%;
-  border: 1px solid black;
-  display: inline-block;
-  /*min-height: 10em;*/
+  width: 40%;
+  border: 1px solid white;
+  border-radius: .25em;
+  /*display: inline-block;*/
+  min-height: 16.65em;
   position: absolute;
-  padding: 2em;
-  margin: 2em;
+  padding: 1em;
+  /*margin: 2em;*/
+  right: 15%;
+  top: 0;
+}
+
+.user-name {
+  display: inline;
+  margin-right: 5px;
+  /*margin-bottom: 5px;*/
+}
+
+.user-email {
+  display: inline;
+  float: right;
+  /*margin-bottom: 5px;*/
 }

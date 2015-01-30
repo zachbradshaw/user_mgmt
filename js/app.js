@@ -1,16 +1,23 @@
 var firstNameInput = document.querySelector('.first-name');
 var lastNameInput = document.querySelector('.last-name');
-var emailInput = document.querySelector('.user-email');
-var userIndex = document.querySelector('.user-index__item');
+var emailInput = document.querySelector('.email-input');
+var userIndex = document.querySelector('.user-index__list');
 var userStore = ObjectStore();
 var form = document.querySelector('.user-login__info');
 var userArray = userStore.query();
 var userDisplay = userArray.join('');
+var firstClear = document.querySelector('.first-name');
+var lastClear = document.querySelector('.last-name');
+var emailClear = document.querySelector('.email-input');
+
 
 form.addEventListener('submit', function(e) {
   e.stopPropagation();
   e.preventDefault();
   addUser();
+  firstClear.value = "";
+  lastClear.value = "";
+  emailClear.value = "";
 });
 
 function addUser() {
@@ -25,9 +32,9 @@ function addUser() {
     userStore.add(User(newUser));
 
     var listLi = document.createElement('li');
-    var listSpan1 = document.createElement('span');
-    var listSpan2 = document.createElement('span');
-    var listSpan3 = document.createElement('span');
+    var listDiv1 = document.createElement('div');
+    var listDiv2 = document.createElement('div');
+    var listDiv3 = document.createElement('div');
 
     var itemFirst = document.createTextNode(newUser.firstName);
     var itemLast = document.createTextNode(newUser.lastName);
@@ -35,15 +42,18 @@ function addUser() {
 
     userIndex.appendChild(listLi);
 
-    listLi.appendChild(listSpan1);
-    listLi.appendChild(listSpan2);
-    listLi.appendChild(listSpan3);
+    listLi.appendChild(listDiv1);
+    listLi.appendChild(listDiv2);
+    listLi.appendChild(listDiv3);
 
-    listSpan1.appendChild(itemFirst);
-    listSpan2.appendChild(itemLast);
-    listSpan3.appendChild(itemEmail);
+    listDiv1.appendChild(itemFirst);
+    listDiv2.appendChild(itemLast);
+    listDiv3.appendChild(itemEmail);
 
-    listLi.className += "list-item";
+    listLi.className += "user-index__item";
+    listDiv1.className += "user-name";
+    listDiv2.className += "user-name";
+    listDiv3.className += "user-email";
   }
 }
 
