@@ -147,16 +147,3 @@ input:-webkit-autofill {
   cursor: pointer;
   opacity: 1;
 }
-
-.edit-user {
-  font-family: 'portfolio-icons';
-  display: inline;
-  position: absolute;
-  opacity: .5;
-  right: 3.5em;
-}
-
-.edit-user:hover {
-  cursor: pointer;
-  opacity: 1;
-}
