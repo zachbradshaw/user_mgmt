@@ -27,39 +27,44 @@ form.addEventListener('submit', function(e) {
   emailClear.value = "";
 });
 
-userList.addEventListener('click', function(e) {
-  if (e.target.nodeName === 'itemX') {
-    removeUser();
-  }
-})
-
-function removeUser() {
-  userStore.remove();
-}
+// userList.addEventListener('click', function(e) {
+//   if (e.target.nodeName === 'itemX') {
+//     removeUser();
+//   }
+// })
+//
+// function removeUser() {
+//   userStore.remove(newUser);
+// }
 
 // This function works, but I'm trying other things.
 //
 function addUser() {
-  var newUser = {
+  var newUser = User({
     firstName: firstNameInput.value,
     lastName: lastNameInput.value,
     email: emailInput.value
-  };
+  });
 
-  if(userStore.add(User(newUser))) {
+  if(userStore.add(newUser)) {
 
-    userStore.add(User(newUser));
+    // userStore.add(User(newUser));
 
     var listLi = document.createElement('li');
     var listDiv1 = document.createElement('div');
     var listDiv2 = document.createElement('div');
     var listDiv3 = document.createElement('div');
     var listClose = document.createElement('div');
+    var itemX = document.createElement('span');
 
     var itemFirst = document.createTextNode(newUser.firstName);
     var itemLast = document.createTextNode(newUser.lastName);
     var itemEmail = document.createTextNode(newUser.email);
-    var itemX = document.createTextNode('k');
+    itemX.textContent = 'k';
+
+    itemX.addEventListener('click', function() {
+      userStore.remove(newUser);
+    })
 
     userList.appendChild(listLi);
 
@@ -79,44 +84,23 @@ function addUser() {
     listDiv3.className += "user-email";
     listClose.className += "remove-user";
   }
+
 }
 
-// function showUser() {
-//   var userListArray = userStore.query();
-//
-//   var listContainer = userIndex;
-//
-//   document.getElementsByClassName(".user-index")[0].appendChild(listContainer);
-//
-//   var listElement = userList;
-//
-//   listContainer.appendChild(listElement);
-//
-//   var numberOfUsers = userListArray.length;
-//
-//   for (var i = 0; i < numberOfUsers; ++i) {
-//
-//     var listItem = userListItem;
-//
-//     listItem.innerHMTL = userListArray[i];
-//
-//     listElement.appendChild(listItem);
+function removeUser(user) {
+  userStore.remove(user);
+}
+
+// function refreshUserList() {
+//   for (i = 0; i < userArray.length; ++i) {
 //
 //   }
 // }
-
-// function searchUser () {
-//   var searchInput = userSearch.value
-//
-//   if (userSearch === userArray.some()) {
-//     alert('fire');
-//   }
-// }
-
+// 
 // function sortUser() {
 //   userArray.sort(function(a, b){
-//     var nameA = a.name.toLowerCase();
-//     var nameB = b.name.toLowerCase();
+//     var nameA = a.firstName.toLowerCase();
+//     var nameB = b.lastName.toLowerCase();
 //     if (nameA < nameB)
 //       return -1
 //     if (nameA > nameB)
