@@ -53,11 +53,8 @@ function addUser() {
     var itemEmail = document.createTextNode(newUser.email);
     itemX.textContent = 'k';
 
-    itemX.addEventListener('click', function() {
-      removeUser(newUser);
-      clearList();
-      // createListing(User);
-      // refreshUserList();
+    $(itemX).on('click', function () {
+      $(this).parent().parent().hide();
     })
 
     userList.appendChild(listLi);
@@ -85,70 +82,8 @@ function removeUser(user) {
   userStore.remove(user);
 }
 
-// function refreshUserList() {
-//   var notDeleted = userStore.query();
-//   var newList = document.createTextNode(userStore.query());
-//   for (i = 0; i < notDeleted.length; ++i) {
-//     document.querySelector('.user-index__list').appendChild(createListing());
-//   }
-// }
-
 function clearList() {
   while (userList.children.length > 0) {
     document.querySelector('.user-index__list').textContent = '';
   }
 }
-
-// function sortUser() {
-//   userArray.sort(function(a, b){
-//     var nameA = a.lastName.toLowerCase();
-//     var nameB = b.lastName.toLowerCase();
-//     if (nameA < nameB)
-//       return -1
-//     if (nameA > nameB)
-//       return 1
-//     return 0;
-//   });
-// }
-
-// function createListing() {
-//
-//   var notDeleted = userStore.query();
-//
-//   var listLi = document.createElement('li');
-//   var listDiv1 = document.createElement('div');
-//   var listDiv2 = document.createElement('div');
-//   var listDiv3 = document.createElement('div');
-//   var listClose = document.createElement('div');
-//   var itemX = document.createElement('span');
-//
-//   var itemFirst = document.createTextNode(notDeleted.firstName);
-//   var itemLast = document.createTextNode(notDeleted.lastName);
-//   var itemEmail = document.createTextNode(notDeleted.email);
-//   itemX.textContent = 'k';
-//
-//   itemX.addEventListener('click', function() {
-//     removeUser();
-//     clearList();
-//     createListing()
-//     refreshUserList();
-//   })
-//
-//   userList.appendChild(listLi);
-//
-//   listLi.appendChild(listDiv1);
-//   listLi.appendChild(listDiv2);
-//   listLi.appendChild(listDiv3);
-//   listLi.appendChild(listClose);
-//
-//   listDiv1.appendChild(itemFirst);
-//   listDiv2.appendChild(itemLast);
-//   listDiv3.appendChild(itemEmail);
-//   listClose.appendChild(itemX);
-//
-//   listLi.className += "user-index__item";
-//   listDiv1.className += "user-name";
-//   listDiv2.className += "user-name";
-//   listDiv3.className += "user-email";
-//   listClose.className += "remove-user";
-// }
