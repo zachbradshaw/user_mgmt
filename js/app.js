@@ -43,8 +43,13 @@ function addUser() {
         '<div class="user-name">' + newUser.firstName + '</div>' +
         '<div class="user-name">' + newUser.lastName + '</div>' +
         '<div class="user-email">' + newUser.email + '</div>' +
+        '<span class="remove-user">' + 'k' + '<span>' +
       '</li>'
     );
+
+    $('.remove-user').click(function () {
+      $(this).parent().remove();
+    })
   }
 }
 
