@@ -1,6 +1,3 @@
-var firstNameInput = document.querySelector('.first-name');
-var lastNameInput = document.querySelector('.last-name');
-var emailInput = document.querySelector('.email-input');
 var userIndex = document.querySelector('.user-index');
 var userList = document.querySelector('.user-index__list');
 var userListItem = document.querySelector('user-index__item');
@@ -8,9 +5,6 @@ var userStore = ObjectStore();
 var form = document.querySelector('.user-login__info');
 var userArray = userStore.query();
 var userDisplay = userArray.join('');
-var firstClear = document.querySelector('.first-name');
-var lastClear = document.querySelector('.last-name');
-var emailClear = document.querySelector('.email-input');
 var userSearch = document.querySelector('.user-search');
 var userSort = document.querySelector('.user-sort');
 var deleteUser = document.querySelector('.remove-user');
@@ -27,55 +21,31 @@ form.addEventListener('submit', function(e) {
   e.stopPropagation();
   e.preventDefault();
   addUser();
-  firstClear.value = "";
-  lastClear.value = "";
-  emailClear.value = "";
+  $('.first-name').val('');
+  $('.last-name').val('');
+  $('.email-input').val('');
 });
 
 function addUser() {
+  var firstNameInput = $('.first-name');
+  var lastNameInput = $('.last-name');
+  var emailInput = $('.email-input');
   var newUser = User({
-    firstName: firstNameInput.value,
-    lastName: lastNameInput.value,
-    email: emailInput.value
+    firstName: firstNameInput.val(),
+    lastName: lastNameInput.val(),
+    email: emailInput.val()
   });
 
   if(userStore.add(newUser)) {
 
-    var listLi = document.createElement('li');
-    var listDiv1 = document.createElement('div');
-    var listDiv2 = document.createElement('div');
-    var listDiv3 = document.createElement('div');
-    var listClose = document.createElement('div');
-    var itemX = document.createElement('span');
-
-    var itemFirst = document.createTextNode(newUser.firstName);
-    var itemLast = document.createTextNode(newUser.lastName);
-    var itemEmail = document.createTextNode(newUser.email);
-    itemX.textContent = 'k';
-
-    $(itemX).on('click', function () {
-      $(this).parent().parent().hide();
-    })
-
-    userList.appendChild(listLi);
-
-    listLi.appendChild(listDiv1);
-    listLi.appendChild(listDiv2);
-    listLi.appendChild(listDiv3);
-    listLi.appendChild(listClose);
-
-    listDiv1.appendChild(itemFirst);
-    listDiv2.appendChild(itemLast);
-    listDiv3.appendChild(itemEmail);
-    listClose.appendChild(itemX);
-
-    listLi.className += "user-index__item";
-    listDiv1.className += "user-name";
-    listDiv2.className += "user-name";
-    listDiv3.className += "user-email";
-    listClose.className += "remove-user";
+    $('.user-index__list').append(
+      '<li class="user-index__item">' + 
+        '<div class="user-name">' + newUser.firstName + '</div>' +
+        '<div class="user-name">' + newUser.lastName + '</div>' +
+        '<div class="user-email">' + newUser.email + '</div>' +
+      '</li>'
+    );
   }
-
 }
 
 function removeUser(user) {
