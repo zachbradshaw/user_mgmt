@@ -35,15 +35,12 @@ input:-webkit-autofill {
 }
 
 .user-mgmt__container {
-  /*text-align: center;*/
   position: relative;
 }
 
 .user-login {
   border: 1px solid white;
   width: 20em;
-  /*margin: 2em;*/
-  /*display: inline-block;*/
   position: absolute;
   border-radius: .25em;
   top: 0;
@@ -100,39 +97,30 @@ input:-webkit-autofill {
   width: 40%;
   border: 1px solid white;
   border-radius: .25em;
-  /*display: inline-block;*/
   min-height: 16.65em;
   position: absolute;
   padding: 1em;
-  /*margin: 2em;*/
   right: 15%;
   top: 0;
 }
 
 .user-index__list {
-  /*background: rgba(255, 255, 255, 0.58);*/
-  /*padding: .5em;*/
   margin: .5em;
 }
 
 .user-index__item {
   margin: 1em;
-  /*background: rgba(255, 255, 255, 0.58);*/
-  /*padding: .5em;*/
 }
 
 .user-name {
   display: inline;
   margin-right: 5px;
-  /*margin-bottom: 5px;*/
 }
 
 .user-email {
   display: inline;
-  /*float: right;*/
   position: absolute;
   right: 5em;
-  /*margin-bottom: 5px;*/
 }
 
 .remove-user {
